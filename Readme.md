@@ -2,6 +2,10 @@
 
 A multi-chain Decentralized Identity (DID) pallet for Substrate-based blockchains, enabling cross-chain identity management and verification.
 
+#### youtube video - https://youtu.be/dKYHCrf5dIk?si=EKxhMmzDWJ6-J_SK
+
+#### Demo - https://ni8crawler18.github.io/Xenon-pallet/
+
 ## Features
 
 - **Decentralized Identity Management**: Create and manage DIDs on-chain
@@ -81,4 +85,4 @@ The pallet is not licensed and can be modified by developers of polkadot ecosyst
 
 ## Contributing
 
-We welcome contributions! Please see our contributing guidelines for details.
+look on https://github.com/Ni8crawler18/Xenon-pallet/ to create an issue or contribute.
