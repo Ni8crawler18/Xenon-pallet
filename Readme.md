@@ -1,6 +1,6 @@
 # Xenon DID Pallet
 
-A multi-chain Decentralized Identity (DID) pallet for Substrate-based blockchains, enabling cross-chain identity management and verification.
+A multi-chain Decentralized Identity (DID) pallet built on polkadot solochain to create, connect and customize identities cross-chain.
 
 #### youtube video - https://youtu.be/dKYHCrf5dIk?si=EKxhMmzDWJ6-J_SK
 
