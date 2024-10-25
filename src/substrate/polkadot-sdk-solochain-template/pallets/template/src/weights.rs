@@ -20,13 +20,13 @@ impl<T: frame_system::Config> WeightInfo for SubstrateWeight<T> {
         Weight::from_parts(10_000_000, 0)
             .saturating_add(T::DbWeight::get().writes(1_u64))
     }
-
+    
     fn link_chain() -> Weight {
         Weight::from_parts(15_000_000, 0)
             .saturating_add(T::DbWeight::get().reads(1_u64))
             .saturating_add(T::DbWeight::get().writes(2_u64))
     }
-
+    
     fn unlink_chain() -> Weight {
         Weight::from_parts(15_000_000, 0)
             .saturating_add(T::DbWeight::get().reads(1_u64))
@@ -40,13 +40,13 @@ impl WeightInfo for () {
         Weight::from_parts(10_000_000, 0)
             .saturating_add(RocksDbWeight::get().writes(1_u64))
     }
-
+    
     fn link_chain() -> Weight {
         Weight::from_parts(15_000_000, 0)
             .saturating_add(RocksDbWeight::get().reads(1_u64))
             .saturating_add(RocksDbWeight::get().writes(2_u64))
     }
-
+    
     fn unlink_chain() -> Weight {
         Weight::from_parts(15_000_000, 0)
             .saturating_add(RocksDbWeight::get().reads(1_u64))

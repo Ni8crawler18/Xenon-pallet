@@ -8,12 +8,12 @@ pub mod weights;
 pub mod pallet {
     use frame_support::{
         pallet_prelude::*,
-        traits::{Currency, ReservableCurrency},
+        traits::ReservableCurrency,
         Blake2_128Concat,
     };
     use frame_system::pallet_prelude::*;
-    use scale_info::TypeInfo;
-    use sp_std::prelude::*;
+    use scale_info::{TypeInfo, prelude::vec::Vec};
+    use codec::{Decode, Encode, MaxEncodedLen};
     use crate::weights::WeightInfo;
 
     // Chain Identifier structure
