@@ -1,9 +1,9 @@
-// lib.rs
 #![cfg_attr(not(feature = "std"), no_std)]
 
 pub use pallet::*;
 pub mod weights;
 
+// Implement the pallet's configuration trait
 #[frame_support::pallet]
 pub mod pallet {
     use frame_support::{

@@ -1,39 +1,11 @@
-use crate as pallet_template;
-use frame_support::derive_impl;
-use sp_runtime::BuildStorage;
-
-type Block = frame_system::mocking::MockBlock<Test>;
-
-// Configure a mock runtime to test the pallet.
-frame_support::construct_runtime!(
-	pub enum Test
-	{
-		System: frame_system,
-		TemplateModule: pallet_template,
-	}
-);
-
-#[derive_impl(frame_system::config_preludes::TestDefaultConfig)]
-impl frame_system::Config for Test {
-	type Block = Block;
-}
-
-impl pallet_template::Config for Test {
-	type RuntimeEvent = RuntimeEvent;
-	type WeightInfo = ();
-}
-
-// Build genesis storage according to the mock runtime.
-pub fn new_test_ext() -> sp_io::TestExternalities {
-	frame_system::GenesisConfig::<Test>::default().build_storage().unwrap().into()
-}
-// mock.rs
+//! Mock runtime for pallet testing.
+//! This file sets up a mock runtime environment for unit testing the pallet.
 #![cfg(test)]
 
 use crate as pallet_template;
 use frame_support::{
     parameter_types,
-    traits::{ConstU16, ConstU32, ConstU64},
+    traits::{ConstU16, ConstU32, ConstU64, ReservableCurrency},
 };
 use sp_core::H256;
 use sp_runtime::{
@@ -41,8 +13,10 @@ use sp_runtime::{
     BuildStorage,
 };
 
-type Block = frame_system::mocking::MockBlock<Test>;
+/// Mock Block type
+type Block = frame_system::mocking::MockBlock;
 
+// Configure a mock runtime to test the pallet
 frame_support::construct_runtime!(
     pub enum Test {
         System: frame_system,
@@ -73,7 +47,7 @@ impl frame_system::Config for Test {
     type SystemWeightInfo = ();
     type SS58Prefix = ConstU16<42>;
     type OnSetCode = ();
-    type MaxConsumers = frame_support::traits::ConstU32<16>;
+    type MaxConsumers = ConstU32<16>;
 }
 
 impl pallet_balances::Config for Test {
@@ -93,6 +67,7 @@ impl pallet_balances::Config for Test {
     type MaxFreezes = ();
 }
 
+// Define constants for the pallet configuration
 parameter_types! {
     pub const MaxLinkedChains: u32 = 10;
     pub const MaxPublicKeys: u32 = 5;
@@ -108,14 +83,28 @@ impl pallet_template::Config for Test {
     type WeightInfo = ();
 }
 
+/// Helper function to build test externalities
+/// This function creates a new test environment with pre-configured accounts
 pub fn new_test_ext() -> sp_io::TestExternalities {
-    let mut t = frame_system::GenesisConfig::<Test>::default()
+    let mut t = frame_system::GenesisConfig::default()
         .build_storage()
         .unwrap();
+    
+    // Initialize balances for test accounts
     pallet_balances::GenesisConfig::<Test> {
-        balances: vec![(1, 100), (2, 100), (3, 100)],
+        balances: vec![
+            (1, 100), // Alice
+            (2, 100), // Bob
+            (3, 100), // Charlie
+        ],
     }
     .assimilate_storage(&mut t)
     .unwrap();
+    
     t.into()
 }
+
+// Helper constants for better test readability
+pub const ALICE: u64 = 1;
+pub const BOB: u64 = 2;
+pub const CHARLIE: u64 = 3;

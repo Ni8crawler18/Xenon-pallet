@@ -247,7 +247,6 @@ impl pallet_sudo::Config for Runtime {
 	type WeightInfo = pallet_sudo::weights::SubstrateWeight<Runtime>;
 }
 
-/// Configure the pallet-template in pallets/template.
 parameter_types! {
     pub const MaxLinkedChains: u32 = 10;
     pub const MaxPublicKeys: u32 = 5;
