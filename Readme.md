@@ -8,6 +8,8 @@ A multi-chain Decentralized Identity (DID) pallet built on polkadot solochain to
 
 #### Pitchdeck - https://drive.google.com/file/d/1YRQp3F2fRnPx486-pSdrT0dATSpJT0fo/view?usp=sharing
 
+#### Developer docs - https://ni8crawlers-den.gitbook.io/xenon-pallet/
+
 ## Features
 
 - **Decentralized Identity Management**: Create and manage DIDs on-chain
@@ -83,7 +85,7 @@ XenonPallet::unlink_chain(origin, 1)?;  // Unlink Ethereum chain
 
 ## License
 
-The pallet is not licensed and can be modified by developers of polkadot ecosystem to create new Dapps.
+The pallet is licensed under MIT.
 
 ## Contributing
 
