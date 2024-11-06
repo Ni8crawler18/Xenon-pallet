@@ -6,6 +6,8 @@ A multi-chain Decentralized Identity (DID) pallet built on polkadot solochain to
 
 #### Demo - https://ni8crawler18.github.io/Xenon-pallet/
 
+### Pitchdeck - https://drive.google.com/file/d/1YRQp3F2fRnPx486-pSdrT0dATSpJT0fo/view?usp=sharing
+
 ## Features
 
 - **Decentralized Identity Management**: Create and manage DIDs on-chain
